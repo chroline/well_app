@@ -1,0 +1,20 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    - avoid_function_literals_in_foreach_calls
+    - avoid_print
+    - avoid_unnecessary_containers
+    - avoid_void_async
+    - file_names
+    - exhaustive_cases
+    - invariant_booleans
+    - lines_longer_than_80_chars
+    - no_default_cases
+    - prefer_const_constructors
+    - prefer_const_declarations
+    - prefer_expression_function_bodies
+    - prefer_final_locals
+    - prefer_null_aware_operators
+    - prefer_relative_imports
+    - unnecessary_parenthesis

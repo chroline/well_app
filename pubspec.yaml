@@ -1,0 +1,63 @@
+name: well_app
+description: Improve your productivity and long-term happiness in just 21 days.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+5
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  hive: ^2.0.4
+  hive_flutter: ^1.0.0
+  flutter_hooks: ^0.16.0
+  rxdart: ^0.26.0
+  url_launcher: ^6.0.3
+  get_it: ^6.1.1
+  flutter_local_notifications: ^6.0.0
+  flutter_native_timezone: ^2.0.0
+  package_info_plus: ^1.0.3
+  google_fonts: ^2.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic: ^1.11.0
+  flutter_launcher_icons: ^0.9.0
+
+flutter_icons:
+  image_path_android: "assets/launcher_icon.png"
+  image_path_ios: "assets/launcher_icon.png"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  adaptive_icon_foreground: "assets/adaptive_icon_foreground.png"
+  adaptive_icon_background: "#FDD835"
+  remove_alpha_ios: true
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - fonts/
+
+  fonts:
+    - family: Work Sans
+      fonts:
+        - asset: fonts/WorkSans-Light.ttf
+          weight: 300
+        - asset: fonts/WorkSans-Regular.ttf
+          weight: 400
+        - asset: fonts/WorkSans-Medium.ttf
+          weight: 500
+        - asset: fonts/WorkSans-Bold.ttf
+          weight: 700
