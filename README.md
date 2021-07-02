@@ -1,1 +1,1 @@
-![The Well App](https://gitlab.com/well-app/app/-/raw/main/thumbnail.png)
+![The Well App](https://gitlab.com/chroline/well_app/-/raw/main/thumbnail.png)
