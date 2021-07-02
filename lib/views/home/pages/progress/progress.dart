@@ -9,7 +9,7 @@ import '../../../../util/calculate_day_completion.dart';
 class ProgressTabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final today = DayCollectionService.I.dayData$.valueWrapper!.value!;
+    final today = DayCollectionService.I.today;
 
     final completed = calculateDayCompletion(today);
 

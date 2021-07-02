@@ -25,9 +25,7 @@ class _JournalFormState extends State<_JournalForm> {
   @override
   void initState() {
     super.initState();
-    _ctrl.text =
-        (DayCollectionService.I.dayData$.valueWrapper!.value!.journal ?? '')
-            .toString();
+    _ctrl.text = (DayCollectionService.I.today.journal ?? '').toString();
   }
 
   @override
@@ -55,8 +53,10 @@ class _JournalFormState extends State<_JournalForm> {
             SizedBox(
               width: double.infinity,
               child: TextButton(
-                onPressed: () =>
-                    DayCollectionService.I.update(journal: _ctrl.text),
+                onPressed: () {
+                  DayCollectionService.I.update(journal: _ctrl.text);
+                  WidgetsBinding.instance!.focusManager.primaryFocus?.unfocus();
+                },
                 child: const Text('SAVE JOURNAL'),
               ),
             )

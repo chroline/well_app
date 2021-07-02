@@ -41,7 +41,7 @@ class InspirationTabPage extends StatelessWidget {
 class _InspirationList extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final days = DayCollectionService.I.dayCollection$.valueWrapper!.value;
+    final days = DayCollectionService.I.dayCollection;
 
     final gratitudes = days.map((e) => e.gratitudes).expand((i) => i).toList();
     final gratitudeIndex =

@@ -2,16 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:well_app/util/partition.dart';
 
 import '../../../../components/overview_day_item.dart';
 import '../../../../components/overview_stat_item.dart';
 import '../../../../services/day_collection.dart';
 import '../../../../style.dart';
 import '../../../../util/calculate_day_completion.dart';
-import '../../../../util/partition.dart';
 
 class OverviewTabPage extends StatelessWidget {
-  final days = DayCollectionService.I.dayCollection$.valueWrapper!.value;
+  final days = DayCollectionService.I.dayCollection;
+
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
@@ -91,7 +92,7 @@ class OverviewTabPage extends StatelessWidget {
 }
 
 class _OverviewDays extends StatelessWidget {
-  final days = DayCollectionService.I.dayCollection$.valueWrapper!.value;
+  final days = DayCollectionService.I.dayCollection;
 
   @override
   Widget build(BuildContext context) => Wrap(
@@ -115,7 +116,7 @@ class _OverviewDays extends StatelessWidget {
 }
 
 class _OverviewStats extends StatelessWidget {
-  final days = DayCollectionService.I.dayCollection$.valueWrapper!.value;
+  final days = DayCollectionService.I.dayCollection;
 
   int get gratitudes => days.map((e) => e.gratitudes).expand((i) => i).length;
   int get journals =>
@@ -127,7 +128,7 @@ class _OverviewStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SizedBox(
           child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           OverviewStatItem(
               amnt: gratitudes, desc: "gratitude${gratitudes == 1 ? "" : "s"}"),
