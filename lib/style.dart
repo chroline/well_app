@@ -7,7 +7,7 @@ class Style {
   late final TextTheme textTheme;
 
   Style.init({required BuildContext context}) {
-    textTheme = ThemeData.light().textTheme.apply(fontFamily: "Work Sans");
+    textTheme = ThemeData.light().textTheme.apply(fontFamily: 'Work Sans');
   }
 
   ThemeData get theme => ThemeData(

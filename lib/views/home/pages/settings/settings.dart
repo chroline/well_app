@@ -7,9 +7,7 @@ import '../../../../components/unfocuser.dart';
 import '../../../../services/notifications.dart';
 import '../../../../services/settings.dart';
 import '../../../../style.dart';
-import '../../../../util/create_route.dart';
 import '../../../../util/reset_data.dart';
-import '../../../welcome/welcome.dart';
 
 class SettingsTabPage extends HookWidget {
   @override
@@ -40,11 +38,10 @@ class SettingsTabPage extends HookWidget {
             ),
             TextButton(
               onPressed: () async {
-                Navigator.of(context).pop();
                 isLoading.value = true;
+                Navigator.of(context).pop();
                 await resetData();
-                await Navigator.of(context).pushAndRemoveUntil(
-                    createFadeRoute(WelcomeView()), (r) => false);
+                isLoading.value = false;
               },
               style: TextButton.styleFrom(primary: Colors.red),
               child: const Text('RESET'),
@@ -105,8 +102,9 @@ class SettingsTabPage extends HookWidget {
                         textAlign: TextAlign.center),
                     const SizedBox(height: 20),
                     OutlinedButton(
-                      onPressed: () => launch('https://by.colegaw.in/well-app'),
-                      child: const Text('by.colegaw.in/well-app'),
+                      onPressed: () => launch(
+                          'https://projects.colegaw.in/well-app?utm_source=Well%20App&utm_medium=app&utm_campaign=well_app_settings_page'),
+                      child: const Text('projects.colegaw.in/well-app'),
                     ),
                   ],
                 ),

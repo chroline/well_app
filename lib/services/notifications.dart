@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
@@ -28,29 +29,33 @@ class NotificationService {
   static NotificationService get I => GetIt.I<NotificationService>();
 
   static Future<NotificationService> init() async {
-    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
 
     await _configureLocalTimeZone();
 
-    const initializationSettingsAndroid =
-        AndroidInitializationSettings('app_icon');
-    const initializationSettingsIOS = IOSInitializationSettings(
-        requestAlertPermission: false,
-        requestSoundPermission: false,
-        defaultPresentAlert: false,
-        defaultPresentSound: false);
-    const initializationSettingsMacOS = MacOSInitializationSettings(
-        requestAlertPermission: false,
-        requestSoundPermission: false,
-        defaultPresentAlert: false,
-        defaultPresentSound: false);
+    if (!kIsWeb) {
+      flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
-    const initializationSettings = InitializationSettings(
-        android: initializationSettingsAndroid,
-        iOS: initializationSettingsIOS,
-        macOS: initializationSettingsMacOS);
+      const initializationSettingsAndroid =
+          AndroidInitializationSettings('app_icon');
+      const initializationSettingsIOS = IOSInitializationSettings(
+          requestAlertPermission: false,
+          requestSoundPermission: false,
+          defaultPresentAlert: false,
+          defaultPresentSound: false);
+      const initializationSettingsMacOS = MacOSInitializationSettings(
+          requestAlertPermission: false,
+          requestSoundPermission: false,
+          defaultPresentAlert: false,
+          defaultPresentSound: false);
 
-    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+      const initializationSettings = InitializationSettings(
+          android: initializationSettingsAndroid,
+          iOS: initializationSettingsIOS,
+          macOS: initializationSettingsMacOS);
+
+      await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+    }
 
     final notificationService = NotificationService._(
         flutterLocalNotificationsPlugin: flutterLocalNotificationsPlugin);
@@ -65,26 +70,30 @@ class NotificationService {
     return notificationService;
   }
 
-  NotificationService._({required this.flutterLocalNotificationsPlugin});
+  NotificationService._({this.flutterLocalNotificationsPlugin});
 
-  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+  FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
 
   Future<bool?>? requestPermissions() => flutterLocalNotificationsPlugin
-      .resolvePlatformSpecificImplementation<
+      ?.resolvePlatformSpecificImplementation<
           IOSFlutterLocalNotificationsPlugin>()
       ?.requestPermissions(
         alert: true,
         sound: true,
       );
 
-  Future<void> cancelAllNotifs() => flutterLocalNotificationsPlugin.cancelAll();
+  Future<void> cancelAllNotifs() async {
+    await flutterLocalNotificationsPlugin?.cancelAll();
+  }
 
   Future<void> scheduleNotifs(TimeOfDay timeOfDay) async {
+    if (kIsWeb) return;
+
     await cancelAllNotifs();
 
     SettingsDataService.I.scheduledNotifTime = timeOfDay;
 
-    await flutterLocalNotificationsPlugin.zonedSchedule(
+    await flutterLocalNotificationsPlugin?.zonedSchedule(
         0,
         "Record today's activities",
         "Don't forget to record the activities you completed today!",

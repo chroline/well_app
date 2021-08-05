@@ -8,7 +8,7 @@
 PRODUCT_NAME = Well
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.colegawin.mentalhealth.mentalHealthApp
+PRODUCT_BUNDLE_IDENTIFIER = com.colegawin.well
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2021 com.colegawin.mentalhealth. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2021 com.colegawin. All rights reserved.

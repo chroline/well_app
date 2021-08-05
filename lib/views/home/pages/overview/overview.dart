@@ -2,13 +2,13 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:well_app/util/partition.dart';
 
 import '../../../../components/overview_day_item.dart';
 import '../../../../components/overview_stat_item.dart';
 import '../../../../services/day_collection.dart';
 import '../../../../style.dart';
 import '../../../../util/calculate_day_completion.dart';
+import '../../../../util/partition.dart';
 
 class OverviewTabPage extends StatelessWidget {
   final days = DayCollectionService.I.dayCollection;

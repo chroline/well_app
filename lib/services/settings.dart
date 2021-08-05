@@ -11,15 +11,19 @@ class SettingsDataService {
     await Hive.openBox('settings');
     final box = Hive.box('settings');
 
-    final init = box.get('init') ?? false;
-
-    return SettingsDataService._(box: box, isInitialSession: !init);
+    return SettingsDataService._(box);
   }
 
-  SettingsDataService._({required this.box, required this.isInitialSession});
+  SettingsDataService._(this.box);
 
   final Box<dynamic> box;
-  final bool isInitialSession;
+
+  bool get isInitialSession => box.get('init') ?? true;
+  Future<void> updateInitialSession() async => await box.put('init', false);
+
+  bool get hasRequestedReview => box.get('requestedReview') ?? false;
+  Future<void> updateRequestedReview() async =>
+      await box.put('requestedReview', true);
 
   TimeOfDay get scheduledNotifTime {
     try {

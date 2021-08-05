@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,11 +14,13 @@ import '../home/home.dart';
 
 class WelcomeView extends HookWidget {
   Future<void> initApp() async {
-    await SettingsDataService.I.box.put('init', true);
+    await SettingsDataService.I.updateInitialSession();
 
-    await NotificationService.I.requestPermissions();
-    await NotificationService.I
-        .scheduleNotifs(const TimeOfDay(hour: 19, minute: 0));
+    if (!kIsWeb) {
+      await NotificationService.I.requestPermissions();
+      await NotificationService.I
+          .scheduleNotifs(const TimeOfDay(hour: 19, minute: 0));
+    }
     SettingsDataService.I.scheduledNotifTime =
         const TimeOfDay(hour: 19, minute: 0);
   }
@@ -64,8 +67,8 @@ class WelcomeView extends HookWidget {
                                 backgroundColor: Colors.white.withOpacity(0.25),
                                 side: const BorderSide(
                                     width: 2.0, color: Colors.indigo)),
-                            onPressed: () =>
-                                launch('https://by.colegaw.in/well-app'),
+                            onPressed: () => launch(
+                                'https://projects.colegaw.in/well-app?utm_source=Well%20App&utm_medium=app&utm_campaign=well_app_more_information'),
                             child: const Text('MORE INFORMATION',
                                 style: TextStyle(color: Colors.indigo)),
                           )

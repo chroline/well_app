@@ -38,10 +38,9 @@ class WellApp extends StatelessWidget {
     } catch (_) {
       GetIt.I.registerSingleton(style);
     }
-    //
 
     return MaterialApp(
-        title: 'Well',
+        title: 'The Well App',
         theme: style.theme,
         home: Material(
           child: SettingsDataService.I.isInitialSession
