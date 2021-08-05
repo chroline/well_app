@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -135,7 +138,9 @@ class _NotificationUpdateForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final notifTimeCtrl = useTextEditingController(
-        text: SettingsDataService.I.scheduledNotifTime.format(context));
+        text: (!kIsWeb && (Platform.isIOS || Platform.isAndroid))
+            ? SettingsDataService.I.scheduledNotifTime.format(context)
+            : '');
 
     Future<void> updateNotifTime() async {
       final timeOfDay = await showTimePicker(
@@ -150,9 +155,10 @@ class _NotificationUpdateForm extends HookWidget {
       }
     }
 
-    return TextField(
+    final textField = TextField(
       controller: notifTimeCtrl,
       readOnly: true,
+      enabled: false,
       onTap: updateNotifTime,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
@@ -163,5 +169,13 @@ class _NotificationUpdateForm extends HookWidget {
         ),
       ),
     );
+
+    return (kIsWeb || !(Platform.isIOS || Platform.isAndroid))
+        ? Tooltip(
+            message: 'Notifications are currently unavailable on '
+                '${kIsWeb ? 'web' : 'desktop'}',
+            child: textField,
+          )
+        : textField;
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -33,7 +35,7 @@ class NotificationService {
 
     await _configureLocalTimeZone();
 
-    if (!kIsWeb) {
+    if (!kIsWeb && (Platform.isIOS || Platform.isAndroid)) {
       flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
       const initializationSettingsAndroid =
@@ -47,7 +49,7 @@ class NotificationService {
           requestAlertPermission: false,
           requestSoundPermission: false,
           defaultPresentAlert: false,
-          defaultPresentSound: false);
+          defaultPresentSound: true);
 
       const initializationSettings = InitializationSettings(
           android: initializationSettingsAndroid,
