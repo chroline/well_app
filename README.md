@@ -86,7 +86,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 # ✍️ Contributing
 
-*coming soon*
+Interested in contributing to the Well app project? Thanks so much for your interest! We are always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
+
+If you have a contribution in mind, please check out our [Contribution Guide](https://github.com/chroline/well_app/wiki/Contribution-Guide) for information on how to do so. Also, make sure you read our [Code of Conduct](https://github.com/chroline/well_app/wiki/Code-of-Conduct) to foster an encouraging sense of community.
 
 # 🌟 Spread the word!
 
