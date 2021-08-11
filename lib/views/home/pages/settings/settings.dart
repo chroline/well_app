@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -138,7 +136,7 @@ class _NotificationUpdateForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final notifTimeCtrl = useTextEditingController(
-        text: (!kIsWeb && (Platform.isIOS || Platform.isAndroid))
+        text: !kIsWeb
             ? SettingsDataService.I.scheduledNotifTime.format(context)
             : '');
 
@@ -158,7 +156,6 @@ class _NotificationUpdateForm extends HookWidget {
     final textField = TextField(
       controller: notifTimeCtrl,
       readOnly: true,
-      enabled: false,
       onTap: updateNotifTime,
       decoration: InputDecoration(
         border: const OutlineInputBorder(),
@@ -170,12 +167,19 @@ class _NotificationUpdateForm extends HookWidget {
       ),
     );
 
-    return (kIsWeb || !(Platform.isIOS || Platform.isAndroid))
+    return kIsWeb
         ? Tooltip(
-            message: 'Notifications are currently unavailable on '
-                '${kIsWeb ? 'web' : 'desktop'}',
+            message: 'Notifications are currently unavailable on web',
             child: textField,
           )
-        : textField;
+        : Column(children: [
+            textField,
+            const SizedBox(height: 20),
+            Text(
+                'Make sure notifications are enabled for the Well app '
+                'in your settings.',
+                style: Style.I.textTheme.caption,
+                textAlign: TextAlign.center)
+          ]);
   }
 }
