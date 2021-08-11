@@ -84,6 +84,8 @@ Here's a brief high-level overview of the tech stack the Well app uses:
   - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we working to resolve!
 - The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
 
+For more information on the technologies that power the Well app, check out the [Tech Stack](https://github.com/chroline/well_app/wiki/Tech-Stack) page on our wiki.
+
 # ✍️ Contributing
 
 Interested in contributing to the Well app project? Thanks so much for your interest! We are always looking for improvements to the project and contributions from open-source developers are greatly appreciated.
