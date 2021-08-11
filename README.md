@@ -99,6 +99,8 @@ If you want to say thank you or/and support active development of the Well app:
 
 Thanks so much for your interest in growing the reach of the Well app!
 
+_**PS:** consider sponsoring me ([Cole Gawin](https://colegaw.in)) to continue the development of this project on [BuyMeACoffee](https://buymeacoffee.com/colegawin) :)_
+
 # ⚠️ License
 
 The Well App is free and open-source software licensed under the GNU General Public License v3.0. All designs were created by [Cole Gawin](https://github.com/chroline) and distributed under Creative Commons license (CC BY-SA 4.0 International).
