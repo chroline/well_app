@@ -4,12 +4,13 @@ import '../../../../../services/day_collection.dart';
 
 class JournalTab extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SingleChildScrollView(
+  Widget build(BuildContext context) => Center(
+          child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
           child: _JournalForm(),
         ),
-      );
+      ));
 }
 
 class _JournalForm extends StatefulWidget {
@@ -33,6 +34,7 @@ class _JournalFormState extends State<_JournalForm> {
         key: _formKey,
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextFormField(
                 controller: _ctrl,
