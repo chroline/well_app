@@ -31,36 +31,35 @@ class NotificationService {
   static NotificationService get I => GetIt.I<NotificationService>();
 
   static Future<NotificationService> init() async {
-    FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
-
     await _configureLocalTimeZone();
 
-    if (!kIsWeb && (Platform.isIOS || Platform.isAndroid)) {
-      flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
-      const initializationSettingsAndroid =
-          AndroidInitializationSettings('app_icon');
-      const initializationSettingsIOS = IOSInitializationSettings(
-          requestAlertPermission: false,
-          requestSoundPermission: false,
-          defaultPresentAlert: false,
-          defaultPresentSound: false);
-      const initializationSettingsMacOS = MacOSInitializationSettings(
-          requestAlertPermission: false,
-          requestSoundPermission: false,
-          defaultPresentAlert: false,
-          defaultPresentSound: true);
+    const initializationSettingsAndroid =
+        AndroidInitializationSettings('app_icon');
 
-      const initializationSettings = InitializationSettings(
-          android: initializationSettingsAndroid,
-          iOS: initializationSettingsIOS,
-          macOS: initializationSettingsMacOS);
+    const initializationSettingsIOS = IOSInitializationSettings(
+        requestAlertPermission: false,
+        requestBadgePermission: false,
+        requestSoundPermission: false);
 
+    const initializationSettingsMacOS = MacOSInitializationSettings(
+        requestAlertPermission: false,
+        requestBadgePermission: false,
+        requestSoundPermission: false);
+
+    const initializationSettings = InitializationSettings(
+        android: initializationSettingsAndroid,
+        iOS: initializationSettingsIOS,
+        macOS: initializationSettingsMacOS);
+
+    if (!kIsWeb) {
       await flutterLocalNotificationsPlugin.initialize(initializationSettings);
     }
 
     final notificationService = NotificationService._(
-        flutterLocalNotificationsPlugin: flutterLocalNotificationsPlugin);
+        flutterLocalNotificationsPlugin:
+            kIsWeb ? null : flutterLocalNotificationsPlugin);
 
     if (!SettingsDataService.I.isInitialSession &&
         SettingsDataService.I.registeredVersion != await getVersion()) {
@@ -76,13 +75,29 @@ class NotificationService {
 
   FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
 
-  Future<bool?>? requestPermissions() => flutterLocalNotificationsPlugin
-      ?.resolvePlatformSpecificImplementation<
-          IOSFlutterLocalNotificationsPlugin>()
-      ?.requestPermissions(
-        alert: true,
-        sound: true,
-      );
+  Future<bool?>? requestPermissions() async {
+    if (Platform.isIOS) {
+      await flutterLocalNotificationsPlugin
+          ?.resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin>()
+          ?.requestPermissions(
+            alert: true,
+            badge: true,
+            sound: true,
+          );
+    }
+    if (Platform.isMacOS) {
+      // ignore: unawaited_futures
+      flutterLocalNotificationsPlugin
+          ?.resolvePlatformSpecificImplementation<
+              MacOSFlutterLocalNotificationsPlugin>()
+          ?.requestPermissions(
+            alert: true,
+            badge: true,
+            sound: true,
+          );
+    }
+  }
 
   Future<void> cancelAllNotifs() async {
     await flutterLocalNotificationsPlugin?.cancelAll();

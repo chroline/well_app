@@ -14,15 +14,17 @@ import '../home/home.dart';
 
 class WelcomeView extends HookWidget {
   Future<void> initApp() async {
-    await SettingsDataService.I.updateInitialSession();
-
     if (!kIsWeb) {
       await NotificationService.I.requestPermissions();
+
       await NotificationService.I
           .scheduleNotifs(const TimeOfDay(hour: 19, minute: 0));
     }
+
     SettingsDataService.I.scheduledNotifTime =
         const TimeOfDay(hour: 19, minute: 0);
+
+    await SettingsDataService.I.updateInitialSession();
   }
 
   @override
