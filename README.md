@@ -106,3 +106,13 @@ _**PS:** consider sponsoring me ([Cole Gawin](https://colegaw.in)) to continue t
 # ⚠️ License
 
 The Well App is free and open-source software licensed under the GNU General Public License v3.0. All designs were created by [Cole Gawin](https://github.com/chroline) and distributed under Creative Commons license (CC BY-SA 4.0 International).
+
+<br />
+
+---
+
+<br />
+
+# ❤️
+
+Reminder that *you are great, you are enough, and your presence is valued.* If you are struggling with your mental health, please reach out to someone you love and consult a professional. [There are many resources for you to get help in a time of need.](https://www.nimh.nih.gov/health/find-help)
