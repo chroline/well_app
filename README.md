@@ -59,6 +59,7 @@
 <div align="center">
 
 **[PROJECT PHILOSOPHY](https://github.com/chroline/well_app#-philosophy) • 
+[WIKI](https://github.com/chroline/well_app#-wiki) • 
 [TECH STACK](https://github.com/chroline/well_app#-tech-stack) • 
 [CONTRIBUTING](https://github.com/chroline/well_app#%EF%B8%8F-contributing) • 
 [SPREAD THE WORD](https://github.com/chroline/well_app/blob/main/README.md#-spread-the-word) • 
