@@ -74,6 +74,10 @@ The Well app is a mental health and mindfulness app built on top of the science 
 
 There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
 
+# 📒 Wiki
+
+This project repository has [a fantastic wiki](https://github.com/chroline/well_app/wiki) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
+
 # 👨‍💻 Tech stack
 
 Here's a brief high-level overview of the tech stack the Well app uses:
