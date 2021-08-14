@@ -24,19 +24,19 @@
   
 ### Quick Links
   
-<a href='https://projects.colegaw.in/well-app'>
+<a href='https://projects.colegaw.in/well-app?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme'>
   
 <img src='https://img.shields.io/badge/HOMEPAGE-gray?style=for-the-badge'>
   
 </a>
   
-<a href='https://projects.colegaw.in/well-app/research'>
+<a href='https://projects.colegaw.in/well-app/research?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme'>
   
 <img src='https://img.shields.io/badge/RESEARCH-blue?style=for-the-badge'>
   
 </a>
   
-<a href='https://projects.colegaw.in/well-app/case-study'>
+<a href='https://projects.colegaw.in/well-app/case-study?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme'>
   
 <img src='https://img.shields.io/badge/CASE STUDY-green?style=for-the-badge'>
   
@@ -74,6 +74,8 @@
 > The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
 > 
 > There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
+
+**Read more about the Well app on [the project homepage](https://projects.colegaw.in/well-app?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme).**
 
 # 📒 Wiki
 
