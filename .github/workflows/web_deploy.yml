@@ -11,6 +11,7 @@ on:
     paths:
       - 'lib/**'
       - 'web/**'
+      - '.github/workflows/web_deploy.yml'
       - 'pubspec.yaml'
   pull_request:
     branches: [ main ]
@@ -36,6 +37,7 @@ jobs:
         with:
           publish-dir: './build/web'
           production-branch: master
+          production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
