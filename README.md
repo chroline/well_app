@@ -62,8 +62,8 @@
 [WIKI](https://github.com/chroline/well_app#-wiki) • 
 [TECH STACK](https://github.com/chroline/well_app#-tech-stack) • 
 [CONTRIBUTING](https://github.com/chroline/well_app#%EF%B8%8F-contributing) • 
-[SPREAD THE WORD](https://github.com/chroline/well_app/blob/main/README.md#-spread-the-word) • 
-[LICENSE](https://github.com/chroline/well_app/blob/main/README.md#%EF%B8%8F-license)**
+[SPREAD THE WORD](https://github.com/chroline/well_app#-spread-the-word) • 
+[LICENSE](https://github.com/chroline/well_app#%EF%B8%8F-license)**
 
 </div>
 
