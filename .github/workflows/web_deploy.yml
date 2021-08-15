@@ -21,6 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: build
+          key: ${{ runner.os }}-build
       - uses: subosito/flutter-action@v1
         with:
           channel: 'master'
