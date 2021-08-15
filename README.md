@@ -79,7 +79,7 @@
 
 # 📒 Wiki
 
-This project repository has [a fantastic wiki](https://github.com/chroline/well_app/wiki) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
+This project repository has [a great wiki](https://github.com/chroline/well_app/wiki) (currently WIP) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
 
 # 👨‍💻 Tech stack
 
