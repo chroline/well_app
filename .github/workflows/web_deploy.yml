@@ -8,6 +8,10 @@ name: Deploy web app
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'lib/**'
+      - 'web/**'
+      - 'pubspec.yaml'
   pull_request:
     branches: [ main ]
 
