@@ -58,12 +58,12 @@
 
 <div align="center">
 
-**[PROJECT PHILOSOPHY](https://github.com/chroline/well_app#-philosophy) • 
+**[PROJECT PHILOSOPHY](https://github.com/chroline/well_app#-project-philosophy) • 
 [WIKI](https://github.com/chroline/well_app#-wiki) • 
 [TECH STACK](https://github.com/chroline/well_app#-tech-stack) • 
 [CONTRIBUTING](https://github.com/chroline/well_app#%EF%B8%8F-contributing) • 
-[SPREAD THE WORD](https://github.com/chroline/well_app/blob/main/README.md#-spread-the-word) • 
-[LICENSE](https://github.com/chroline/well_app/blob/main/README.md#%EF%B8%8F-license)**
+[SPREAD THE WORD](https://github.com/chroline/well_app#-spread-the-word) • 
+[LICENSE](https://github.com/chroline/well_app#%EF%B8%8F-license)**
 
 </div>
 
@@ -79,7 +79,7 @@
 
 # 📒 Wiki
 
-This project repository has [a fantastic wiki](https://github.com/chroline/well_app/wiki) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
+This project repository has [a great wiki](https://github.com/chroline/well_app/wiki) (currently WIP) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
 
 # 👨‍💻 Tech stack
 
@@ -88,7 +88,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 - This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
 - For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
 - To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we working to resolve!
+  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
 - The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
 
 For more information on the technologies that power the Well app, check out the [Tech Stack](https://github.com/chroline/well_app/wiki/Tech-Stack) page on our wiki.
@@ -101,10 +101,10 @@ If you have a contribution in mind, please check out our [Contribution Guide](ht
 
 # 🌟 Spread the word!
 
-If you want to say thank you or/and support active development of the Well app:
+If you want to say thank you and/or support active development of the Well app:
 
 - Add a GitHub Star to the project!
-- Tweet about project on your Twitter!
+- Tweet about the project on your Twitter!
   - Tag [@colegawin_](https://twitter.com/colegawin_) and/or `#thewellapp`
 - Leave us a review [on the iOS App Store](https://apps.apple.com/us/app/well-reboot-your-mindset/id1573357406)!
 
@@ -114,7 +114,7 @@ _**PS:** consider sponsoring me ([Cole Gawin](https://colegaw.in)) to continue t
 
 # ⚠️ License
 
-The Well App is free and open-source software licensed under the GNU General Public License v3.0. All designs were created by [Cole Gawin](https://github.com/chroline) and distributed under Creative Commons license (CC BY-SA 4.0 International).
+The Well app is free and open-source software licensed under the GNU General Public License v3.0. All designs were created by [Cole Gawin](https://github.com/chroline) and distributed under Creative Commons license (CC BY-SA 4.0 International).
 
 <br />
 
@@ -122,6 +122,6 @@ The Well App is free and open-source software licensed under the GNU General Pub
 
 <br />
 
-# ❤️
+# 💛
 
 Reminder that *you are great, you are enough, and your presence is valued.* If you are struggling with your mental health, please reach out to someone you love and consult a professional. [There are many resources for you to get help in a time of need.](https://www.nimh.nih.gov/health/find-help)
