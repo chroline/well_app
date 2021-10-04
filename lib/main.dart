@@ -6,7 +6,6 @@ import 'package:well_app_core/well_app_core.dart';
 
 import 'home/home.dart';
 import 'loading/loading.dart';
-import 'style.dart';
 import 'welcome/welcome.dart';
 
 Future<void> main() async {

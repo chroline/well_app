@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:well_app_core/well_app_core.dart';
 
-import '../../../../style.dart';
 import 'overview_day_item.dart';
 import 'overview_stat_item.dart';
 

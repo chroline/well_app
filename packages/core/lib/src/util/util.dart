@@ -6,4 +6,5 @@ export './max_width_container.dart';
 export './models/models.dart';
 export './partition_list.dart';
 export './reset_data.dart';
+export './style.dart';
 export './unfocuser.dart';

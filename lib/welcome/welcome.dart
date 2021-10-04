@@ -5,7 +5,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:well_app_core/well_app_core.dart';
 
-import '../../style.dart';
 import '../home/home.dart';
 
 Route _createFadeRoute(Widget page) => PageRouteBuilder(
