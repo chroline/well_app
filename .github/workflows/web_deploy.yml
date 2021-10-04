@@ -10,6 +10,7 @@ on:
     branches: [ main ]
     paths:
       - 'lib/**'
+      - 'packages/**'
       - 'web/**'
       - '.github/workflows/web_deploy.yml'
       - 'pubspec.yaml'
