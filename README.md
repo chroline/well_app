@@ -65,7 +65,6 @@
 <div align="center">
 
 **[PROJECT PHILOSOPHY](https://github.com/chroline/well_app#-project-philosophy) • 
-[WIKI](https://github.com/chroline/well_app#-wiki) • 
 [TECH STACK](https://github.com/chroline/well_app#-tech-stack) • 
 [CONTRIBUTING](https://github.com/chroline/well_app#%EF%B8%8F-contributing) • 
 [SPREAD THE WORD](https://github.com/chroline/well_app#-spread-the-word) • 
@@ -82,10 +81,6 @@
 > There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
 
 **Read more about the Well app on [the project homepage](https://projects.colegaw.in/well-app?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme).**
-
-# 📒 Wiki
-
-This project repository has [a great wiki](https://github.com/chroline/well_app/wiki) (currently WIP) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
 
 # 👨‍💻 Tech stack
 
