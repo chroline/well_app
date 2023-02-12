@@ -28,16 +28,7 @@ class WellApp extends StatelessWidget {
         title: 'The Well App',
         theme: style.theme,
         home: FutureBuilder(
-          future: () async {
-            await Hive.initFlutter();
-            Hive.registerAdapter(DayModelAdapter());
-
-            await SettingsDataRepository.init();
-            await NotificationRepository.init();
-            await DayCollectionRepository.init();
-
-            return true;
-          }(),
+          future: _initDataRepositories(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Material(
@@ -45,10 +36,31 @@ class WellApp extends StatelessWidget {
                     ? WelcomeView()
                     : HomeView(),
               );
+            } else if (snapshot.hasError) {
+              return Scaffold(
+                body: Center(
+                  child: Text('An error occurred: ${snapshot.error}'),
+                ),
+              );
             } else {
               return LoadingView();
             }
           },
         ));
+  }
+}
+
+Future<bool> _initDataRepositories() async {
+  try {
+    await Hive.initFlutter();
+    Hive.registerAdapter(DayModelAdapter());
+
+    await SettingsDataRepository.init();
+    await NotificationRepository.init();
+    await DayCollectionRepository.init();
+
+    return true;
+  } catch (error) {
+    return Future.error(error);
   }
 }
